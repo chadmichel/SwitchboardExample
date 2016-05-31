@@ -53,11 +53,11 @@ namespace ABC.WPFClient
             set
             {
                 _switchboard = value;
-                _switchboard.OnCustomerInserted += _switchboard_OnCustomerInserted;
+                _switchboard.OnCustomerInserted += Switchboard_OnCustomerInserted;
             }
         }
 
-        private void _switchboard_OnCustomerInserted(object sender, EventArgs e)
+        private void Switchboard_OnCustomerInserted(object sender, EventArgs e)
         {
             Reload();
         }
@@ -67,6 +67,10 @@ namespace ABC.WPFClient
             Reload();
         }
 
+        /// <summary>
+        /// Reload customer list. We do when app loads, or when we receive 
+        /// the Switchboard event for an inserted customer.
+        /// </summary>
         private void Reload()
         {
             var factory = new ManagerFactory();
