@@ -5,7 +5,8 @@ This is a very basic architecture example. The UI has two user controls, one for
 After inserting a customer an event is fired on the Switchboard. The list control listens for that event and reloads the list.
 
 Customer records inserted. Switchboard event is fired.
-```
+
+```csharp
         private void Insert_Click(object sender, RoutedEventArgs e)
         {
             var factory = new ManagerFactory();
@@ -21,7 +22,7 @@ Customer records inserted. Switchboard event is fired.
 ```
 
 
-```
+```csharp
         private void Switchboard_OnCustomerInserted(object sender, EventArgs e)
         {
             Reload();
